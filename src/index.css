@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Common design tokens */
+@theme {
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+}
+
+:root {
+  --primary: #031634;
+  --secondary: #036564;
+  --white: #FFFFFF;
+
+  /* Light theme */
+  --bg: #FFFFFF;
+  --surface: #F8FAFC;
+  --text: #031634;
+  --muted: #64748B;
+  --border: #E2E8F0;
+}
+
+[data-theme="dark"] {
+  /* Dark theme */
+  --primary: #031634;
+  --secondary: #20B2AA;
+  --white: #FFFFFF;
+  --bg: #031634;
+  --surface: #0A2445;
+  --text: #FFFFFF;
+  --muted: #CBD5E1;
+  --border: #24415F;
+}
+
+/* Global styles */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply m-0 min-w-80 bg-(--bg) text-base text-(--text);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    @apply font-sans;
+  }
+}
